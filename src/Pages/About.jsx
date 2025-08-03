@@ -1,5 +1,10 @@
+/* eslint-disable react/no-unknown-property */
+/* eslint-disable react/no-unescaped-entities */
+/* eslint-disable react/prop-types */
+/* eslint-disable no-unused-vars */
+/* eslint-disable react/display-name */
 import React, { useEffect, memo, useMemo } from "react"
-import { FileText, Code, Award, Globe, ArrowUpRight, Sparkles, UserCheck } from "lucide-react"
+import { FileText, Code, Award, Globe, ArrowUpRight, Sparkles, UserCheck, GraduationCap, BookOpen, Users, Heart, Star, CheckCircle, Target, Presentation, Users2 } from "lucide-react"
 import AOS from 'aos'
 import 'aos/dist/aos.css'
 
@@ -12,7 +17,7 @@ const Header = memo(() => (
         data-aos="zoom-in-up"
         data-aos-duration="600"
       >
-        About Me
+        Về Tôi
       </h2>
     </div>
     <p 
@@ -21,7 +26,7 @@ const Header = memo(() => (
       data-aos-duration="800"
     >
       <Sparkles className="w-5 h-5 text-purple-400" />
-      Transforming ideas into digital experiences
+      Gia sư CNTT chuyên nghiệp - Đồng hành cùng con bạn
       <Sparkles className="w-5 h-5 text-purple-400" />
     </p>
   </div>
@@ -157,30 +162,30 @@ const AboutPage = () => {
   // Memoized stats data
   const statsData = useMemo(() => [
     {
-      icon: Code,
+      icon: Users,
       color: "from-[#6366f1] to-[#a855f7]",
-      value: totalProjects,
-      label: "Total Projects",
-      description: "Innovative web solutions crafted",
+      value: "100+",
+      label: "Lớp Đã Dạy",
+      description: "Học sinh cấp 2, cấp 3",
       animation: "fade-right",
     },
     {
       icon: Award,
       color: "from-[#a855f7] to-[#6366f1]",
-      value: totalCertificates,
-      label: "Certificates",
-      description: "Professional skills validated",
+      value: "2+",
+      label: "Năm Kinh Nghiệm",
+      description: "Tại MindX Education",
       animation: "fade-up",
     },
     {
-      icon: Globe,
+      icon: GraduationCap,
       color: "from-[#6366f1] to-[#a855f7]",
-      value: YearExperience,
-      label: "Years of Experience",
-      description: "Continuous learning journey",
+      value: "HUBT",
+      label: "Tốt Nghiệp",
+      description: "Trường Kinh doanh và Công nghệ",
       animation: "fade-left",
     },
-  ], [totalProjects, totalCertificates, YearExperience]);
+  ], []);
 
   return (
     <div
@@ -198,46 +203,112 @@ const AboutPage = () => {
               data-aos-duration="1000"
             >
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#6366f1] to-[#a855f7]">
-                Hello, I'm
+                Xin chào, tôi là
               </span>
               <span 
                 className="block mt-2 text-gray-200"
                 data-aos="fade-right"
                 data-aos-duration="1300"
               >
-                Eki Zulfar Rachman
+                Nguyễn Văn Nam
               </span>
             </h2>
             
-            <p 
-              className="text-base sm:text-lg lg:text-xl text-gray-400 leading-relaxed text-justify pb-4 sm:pb-0"
-              data-aos="fade-right"
-              data-aos-duration="1500"
-            >
-             Seorang lulusan Teknik Jaringan Komputer dan Telekomunikasi yang memiliki ketertarikan besar dalam pengembangan Front-End. Saya berfokus pada menciptakan pengalaman digital yang menarik dan selalu berusaha memberikan solusi terbaik dalam setiap proyek yang saya kerjakan.
-            </p>
+                         <div className="space-y-4 text-base sm:text-lg lg:text-xl text-gray-400 leading-relaxed text-justify pb-4 sm:pb-0">
+               <div className="flex items-start gap-3" 
+                 data-aos="fade-right"
+                 data-aos-duration="1500"
+               >
+                 <Heart className="w-6 h-6 text-red-400 mt-1 flex-shrink-0" />
+                 <p>
+                   Là giáo viên CNTT với hơn 2 năm kinh nghiệm giảng dạy tại MindX Education.
+                 </p>
+               </div>
+               
+               <div className="flex items-start gap-3" 
+                 data-aos="fade-right"
+                 data-aos-duration="1600"
+               >
+                 <GraduationCap className="w-6 h-6 text-blue-400 mt-1 flex-shrink-0" />
+                 <p>
+                   Tốt nghiệp Trường Kinh doanh và Công nghệ Hà Nội, chuyên ngành Công nghệ thông tin.
+                 </p>
+               </div>
+               
+               <div className="flex items-start gap-3" 
+                 data-aos="fade-right"
+                 data-aos-duration="1700"
+               >
+                 <Target className="w-6 h-6 text-green-400 mt-1 flex-shrink-0" />
+                 <p>
+                   Chuyên dạy Python và Web Development cho học sinh cấp 2, cấp 3, sinh viên.
+                 </p>
+               </div>
+               
+               <div className="flex items-start gap-3" 
+                 data-aos="fade-right"
+                 data-aos-duration="1800"
+               >
+                 <Star className="w-6 h-6 text-yellow-400 mt-1 flex-shrink-0" />
+                 <p>
+                   Với phương pháp giảng dạy thân thiện, giáo trình chi tiết và bài tập thực hành, 
+                   tôi cam kết giúp con bạn phát triển tư duy lập trình và kỹ năng CNTT một cách hiệu quả nhất.
+                 </p>
+               </div>
+             </div>
 
-               {/* Quote Section */}
-      <div 
-        className="relative bg-gradient-to-br from-[#6366f1]/5 via-transparent to-[#a855f7]/5 border border-gradient-to-r border-[#6366f1]/30 rounded-2xl p-4 my-6 backdrop-blur-md shadow-2xl overflow-hidden"
-        data-aos="fade-up"
-        data-aos-duration="1700"
-      >
-        {/* Floating orbs background */}
-        <div className="absolute top-2 right-4 w-16 h-16 bg-gradient-to-r from-[#6366f1]/20 to-[#a855f7]/20 rounded-full blur-xl"></div>
-        <div className="absolute -bottom-4 -left-2 w-12 h-12 bg-gradient-to-r from-[#a855f7]/20 to-[#6366f1]/20 rounded-full blur-lg"></div>
-        
-        {/* Quote icon */}
-        <div className="absolute top-3 left-4 text-[#6366f1] opacity-30">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
-            <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h4v10h-10z"/>
-          </svg>
-        </div>
-        
-        <blockquote className="text-gray-300 text-center lg:text-left italic font-medium text-sm relative z-10 pl-6">
-          "Leveraging AI as a professional tool, not a replacement."
-        </blockquote>
-      </div>
+            {/* Quote Section */}
+            <div 
+              className="relative bg-gradient-to-br from-[#6366f1]/5 via-transparent to-[#a855f7]/5 border border-gradient-to-r border-[#6366f1]/30 rounded-2xl p-4 my-6 backdrop-blur-md shadow-2xl overflow-hidden"
+              data-aos="fade-up"
+              data-aos-duration="1700"
+            >
+              {/* Floating orbs background */}
+              <div className="absolute top-2 right-4 w-16 h-16 bg-gradient-to-r from-[#6366f1]/20 to-[#a855f7]/20 rounded-full blur-xl"></div>
+              <div className="absolute -bottom-4 -left-2 w-12 h-12 bg-gradient-to-r from-[#a855f7]/20 to-[#6366f1]/20 rounded-full blur-lg"></div>
+              
+              {/* Quote icon */}
+              <div className="absolute top-3 left-4 text-[#6366f1] opacity-30">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h4v10h-10z"/>
+                </svg>
+              </div>
+              
+              <blockquote className="text-gray-300 text-center lg:text-left italic font-medium text-sm relative z-10 pl-6">
+                "Mỗi học sinh đều có tiềm năng riêng. Nhiệm vụ của tôi là khơi dậy và phát triển tiềm năng đó."
+              </blockquote>
+            </div>
+
+                         {/* Services Section */}
+             <div className="space-y-4" data-aos="fade-up" data-aos-duration="1800">
+               <h3 className="text-xl font-semibold text-white">Dịch vụ gia sư:</h3>
+               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                 <div className="flex items-center gap-3 p-3 rounded-lg bg-white/5 border border-white/10">
+                   <Code className="w-5 h-5 text-blue-400" />
+                   <span className="text-gray-300 text-sm">Python Programming</span>
+                 </div>
+                 <div className="flex items-center gap-3 p-3 rounded-lg bg-white/5 border border-white/10">
+                   <Globe className="w-5 h-5 text-green-400" />
+                   <span className="text-gray-300 text-sm">Web Development</span>
+                 </div>
+                 <div className="flex items-center gap-3 p-3 rounded-lg bg-white/5 border border-white/10">
+                   <BookOpen className="w-5 h-5 text-purple-400" />
+                   <span className="text-gray-300 text-sm">Giáo trình chi tiết</span>
+                 </div>
+                 <div className="flex items-center gap-3 p-3 rounded-lg bg-white/5 border border-white/10">
+                   <UserCheck className="w-5 h-5 text-orange-400" />
+                   <span className="text-gray-300 text-sm">Nhận xét sau buổi học</span>
+                 </div>
+                 <div className="flex items-center gap-3 p-3 rounded-lg bg-white/5 border border-white/10">
+                   <Presentation className="w-5 h-5 text-pink-400" />
+                   <span className="text-gray-300 text-sm">Thuyết trình sản phẩm</span>
+                 </div>
+                 <div className="flex items-center gap-3 p-3 rounded-lg bg-white/5 border border-white/10">
+                   <Users2 className="w-5 h-5 text-cyan-400" />
+                   <span className="text-gray-300 text-sm">Giám khảo đánh giá</span>
+                 </div>
+               </div>
+             </div>
 
             <div className="flex flex-col lg:flex-row items-center lg:items-start gap-4 lg:gap-4 lg:px-0 w-full">
               <a href="https://drive.google.com/drive/folders/1BOm51Grsabb3zj6Xk27K-iRwI1zITcpo" className="w-full lg:w-auto">
@@ -246,7 +317,7 @@ const AboutPage = () => {
                 data-aos-duration="800"
                 className="w-full lg:w-auto sm:px-6 py-2 sm:py-3 rounded-lg bg-gradient-to-r from-[#6366f1] to-[#a855f7] text-white font-medium transition-all duration-300 hover:scale-105 flex items-center justify-center lg:justify-start gap-2 shadow-lg hover:shadow-xl "
               >
-                <FileText className="w-4 h-4 sm:w-5 sm:h-5" /> Download CV
+                <FileText className="w-4 h-4 sm:w-5 sm:h-5" /> Xem CV
               </button>
               </a>
               <a href="#Portofolio" className="w-full lg:w-auto">
@@ -255,7 +326,7 @@ const AboutPage = () => {
                 data-aos-duration="1000"
                 className="w-full lg:w-auto sm:px-6 py-2 sm:py-3 rounded-lg border border-[#a855f7]/50 text-[#a855f7] font-medium transition-all duration-300 hover:scale-105 flex items-center justify-center lg:justify-start gap-2 hover:bg-[#a855f7]/10 "
               >
-                <Code className="w-4 h-4 sm:w-5 sm:h-5" /> View Projects
+                <Code className="w-4 h-4 sm:w-5 sm:h-5" /> Xem Dự Án
               </button>
               </a>
             </div>

@@ -1,18 +1,21 @@
+/* eslint-disable no-unused-vars */
+/* eslint-disable react/prop-types */
+/* eslint-disable react/display-name */
 import React, { useState, useEffect, useCallback, memo } from "react"
-import { Github, Linkedin, Mail, ExternalLink, Instagram, Sparkles } from "lucide-react"
+import { Github, Linkedin, Mail, ExternalLink, Instagram, Sparkles, BookOpen, Users, Award, Code } from "lucide-react"
 import { DotLottieReact } from '@lottiefiles/dotlottie-react'
 import AOS from 'aos'
 import 'aos/dist/aos.css'
 
 // Memoized Components
 const StatusBadge = memo(() => (
-  <div className="inline-block animate-float lg:mx-0" data-aos="zoom-in" data-aos-delay="400">
+  <div className="inline-block animate-float lg:mx-0 lg:mt-8" data-aos="zoom-in" data-aos-delay="400">
     <div className="relative group">
       <div className="absolute -inset-0.5 bg-gradient-to-r from-[#6366f1] to-[#a855f7] rounded-full blur opacity-30 group-hover:opacity-50 transition duration-1000"></div>
       <div className="relative px-3 sm:px-4 py-2 rounded-full bg-black/40 backdrop-blur-xl border border-white/10">
         <span className="bg-gradient-to-r from-[#6366f1] to-[#a855f7] text-transparent bg-clip-text sm:text-sm text-[0.7rem] font-medium flex items-center">
           <Sparkles className="sm:w-4 sm:h-4 w-3 h-3 mr-2 text-blue-400" />
-          Ready to Innovate
+          Gia Sư CNTT Chuyên Nghiệp
         </span>
       </div>
     </div>
@@ -25,23 +28,29 @@ const MainTitle = memo(() => (
       <span className="relative inline-block">
         <span className="absolute -inset-2 bg-gradient-to-r from-[#6366f1] to-[#a855f7] blur-2xl opacity-20"></span>
         <span className="relative bg-gradient-to-r from-white via-blue-100 to-purple-200 bg-clip-text text-transparent">
-          Frontend
+          Gia Sư
         </span>
       </span>
       <br />
       <span className="relative inline-block mt-2">
         <span className="absolute -inset-2 bg-gradient-to-r from-[#6366f1] to-[#a855f7] blur-2xl opacity-20"></span>
         <span className="relative bg-gradient-to-r from-[#6366f1] to-[#a855f7] bg-clip-text text-transparent">
-          Developer
+          Tin Học
         </span>
       </span>
     </h1>
   </div>
 ));
 
-const TechStack = memo(({ tech }) => (
-  <div className="px-4 py-2 hidden sm:block rounded-full bg-white/5 backdrop-blur-sm border border-white/10 text-sm text-gray-300 hover:bg-white/10 transition-colors">
-    {tech}
+const ExperienceCard = memo(({ icon: Icon, title, value, description }) => (
+  <div className="px-4 py-3 rounded-xl bg-white/5 backdrop-blur-sm border border-white/10 text-sm text-gray-300 hover:bg-white/10 transition-colors">
+    <div className="flex items-center gap-3">
+      <Icon className="w-5 h-5 text-blue-400" />
+      <div>
+        <div className="font-semibold text-white">{value}</div>
+        <div className="text-xs text-gray-400">{title}</div>
+      </div>
+    </div>
   </div>
 ));
 
@@ -55,7 +64,7 @@ const CTAButton = memo(({ href, text, icon: Icon }) => (
           <span className="bg-gradient-to-r from-gray-200 to-white bg-clip-text text-transparent font-medium z-10">
             {text}
           </span>
-          <Icon className={`w-4 h-4 text-gray-200 ${text === 'Contact' ? 'group-hover:translate-x-1' : 'group-hover:rotate-45'} transform transition-all duration-300 z-10`} />
+          <Icon className={`w-4 h-4 text-gray-200 ${text === 'Liên Hệ' ? 'group-hover:translate-x-1' : 'group-hover:rotate-45'} transform transition-all duration-300 z-10`} />
         </span>
       </div>
     </button>
@@ -77,8 +86,12 @@ const SocialLink = memo(({ icon: Icon, link }) => (
 const TYPING_SPEED = 100;
 const ERASING_SPEED = 50;
 const PAUSE_DURATION = 2000;
-const WORDS = ["Network & Telecom Student", "Tech Enthusiast"];
-const TECH_STACK = ["React", "Javascript", "Node.js", "Tailwind"];
+const WORDS = ["Python Programming", "Web Development", "Cấp 2 & Cấp 3", "Sinh viên"];
+const EXPERIENCE_DATA = [
+  { icon: Users, title: "Lớp đã dạy", value: "100+", description: "Lớp học" },
+  { icon: Award, title: "Kinh nghiệm", value: "2+ năm", description: "Tại MindX" },
+  { icon: BookOpen, title: "Giáo trình", value: "Có sẵn", description: "Chi tiết" }
+];
 const SOCIAL_LINKS = [
   { icon: Github, link: "https://github.com/EkiZR" },
   { icon: Linkedin, link: "https://www.linkedin.com/in/ekizr/" },
@@ -183,28 +196,25 @@ const Home = () => {
                 <p className="text-base md:text-lg text-gray-400 max-w-xl leading-relaxed font-light"
                   data-aos="fade-up"
                   data-aos-delay="1000">
-                  Menciptakan Website Yang Inovatif, Fungsional, dan User-Friendly untuk Solusi Digital.
+                  Gia sư CNTT chuyên nghiệp với hơn 2 năm kinh nghiệm tại MindX. 
+                  Chuyên dạy Python và Web Development cho học sinh cấp 2, cấp 3 với giáo trình chi tiết và bài tập thực hành.
                 </p>
 
-                {/* Tech Stack */}
-                <div className="flex flex-wrap gap-3 justify-start" data-aos="fade-up" data-aos-delay="1200">
-                  {TECH_STACK.map((tech, index) => (
-                    <TechStack key={index} tech={tech} />
+                {/* Experience Cards */}
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-3" data-aos="fade-up" data-aos-delay="1200">
+                  {EXPERIENCE_DATA.map((item, index) => (
+                    <ExperienceCard key={index} {...item} />
                   ))}
                 </div>
 
                 {/* CTA Buttons */}
                 <div className="flex flex-row gap-3 w-full justify-start" data-aos="fade-up" data-aos-delay="1400">
-                  <CTAButton href="#Portofolio" text="Projects" icon={ExternalLink} />
-                  <CTAButton href="#Contact" text="Contact" icon={Mail} />
+                  <CTAButton href="#Portofolio" text="Xem CV" icon={ExternalLink} />
+                  <CTAButton href="#Contact" text="Liên Hệ" icon={Mail} />
                 </div>
 
                 {/* Social Links */}
-                <div className="hidden sm:flex gap-4 justify-start" data-aos="fade-up" data-aos-delay="1600">
-                  {SOCIAL_LINKS.map((social, index) => (
-                    <SocialLink key={index} {...social} />
-                  ))}
-                </div>
+               
               </div>
             </div>
 
