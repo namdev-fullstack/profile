@@ -4,7 +4,7 @@
 /* eslint-disable no-unused-vars */
 /* eslint-disable react/display-name */
 import React, { useEffect, memo, useMemo } from "react"
-import { FileText, Code, Award, Globe, ArrowUpRight, Sparkles, UserCheck, GraduationCap, BookOpen, Users, Heart, Star, CheckCircle, Target, Presentation, Users2 } from "lucide-react"
+import { FileText, Code, Award, Globe, ArrowUpRight, Sparkles, UserCheck, GraduationCap, BookOpen, Users, Heart, Star, CheckCircle, Target, Brain, Laptop, Lightbulb } from "lucide-react"
 import AOS from 'aos'
 import 'aos/dist/aos.css'
 
@@ -39,7 +39,7 @@ const ProfileImage = memo(() => (
       data-aos="fade-up"
       data-aos-duration="1000"
     >
-      {/* Optimized gradient backgrounds with reduced complexity for mobile */}
+      {/* Gradient backgrounds */}
       <div className="absolute -inset-6 opacity-[25%] z-0 hidden sm:block">
         <div className="absolute inset-0 bg-gradient-to-r from-violet-600 via-indigo-500 to-purple-600 rounded-full blur-2xl animate-spin-slower" />
         <div className="absolute inset-0 bg-gradient-to-l from-fuchsia-500 via-rose-500 to-pink-600 rounded-full blur-2xl animate-pulse-slow opacity-50" />
@@ -47,25 +47,57 @@ const ProfileImage = memo(() => (
       </div>
 
       <div className="relative">
-        <div className="w-72 h-72 sm:w-80 sm:h-80 rounded-full overflow-hidden shadow-[0_0_40px_rgba(120,119,198,0.3)] transform transition-all duration-700 group-hover:scale-105">
-          <div className="absolute inset-0 border-4 border-white/20 rounded-full z-20 transition-all duration-700 group-hover:border-white/40 group-hover:scale-105" />
-          
-          {/* Optimized overlay effects - disabled on mobile */}
-          <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-transparent to-black/40 z-10 transition-opacity duration-700 group-hover:opacity-0 hidden sm:block" />
-          <div className="absolute inset-0 bg-gradient-to-t from-purple-500/20 via-transparent to-blue-500/20 z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-700 hidden sm:block" />
-          
-          <img
-            src="/Photo.jpg"
-            alt="Profile"
-            className="w-full h-full object-cover transition-all duration-700 group-hover:scale-110 group-hover:rotate-2"
-            loading="lazy"
-          />
-
-          {/* Advanced hover effects - desktop only */}
-          <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-all duration-700 z-20 hidden sm:block">
-            <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/20 to-transparent transform -translate-x-full group-hover:translate-x-full transition-transform duration-1000" />
-            <div className="absolute inset-0 bg-gradient-to-bl from-transparent via-white/10 to-transparent transform translate-y-full group-hover:-translate-y-full transition-transform duration-1000 delay-100" />
-            <div className="absolute inset-0 rounded-full border-8 border-white/10 scale-0 group-hover:scale-100 transition-transform duration-700 animate-pulse-slow" />
+        <div className="w-72 h-72 sm:w-80 sm:h-80 rounded-full overflow-hidden shadow-[0_0_40px_rgba(120,119,198,0.3)] transform transition-all duration-700 group-hover:scale-105 bg-gradient-to-br from-[#6366f1] to-[#a855f7] p-1">
+          <div className="w-full h-full bg-[#030014] rounded-full flex items-center justify-center relative">
+            
+            {/* Main Content */}
+            <div className="text-center text-white p-6">
+              {/* Profile Icon */}
+              <div className="w-20 h-20 bg-gradient-to-r from-[#6366f1] to-[#a855f7] rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
+                <Brain className="w-10 h-10 text-white" />
+              </div>
+              
+              {/* Name */}
+              <h3 className="text-xl font-bold mb-2 bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">
+                Nguyễn Văn Nam
+              </h3>
+              
+              {/* Title */}
+              <p className="text-sm text-gray-300 mb-4">
+                Gia Sư CNTT Chuyên Nghiệp
+              </p>
+              
+              {/* Skills Icons */}
+              <div className="flex justify-center gap-3 mb-4">
+                <div className="w-8 h-8 bg-blue-500/20 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                  <Code className="w-4 h-4 text-blue-400" />
+                </div>
+                <div className="w-8 h-8 bg-green-500/20 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                  <Laptop className="w-4 h-4 text-green-400" />
+                </div>
+                <div className="w-8 h-8 bg-yellow-500/20 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                  <Lightbulb className="w-4 h-4 text-yellow-400" />
+                </div>
+              </div>
+              
+              {/* Experience Badge */}
+              <div className="inline-flex items-center gap-2 bg-white/10 rounded-full px-3 py-1 border border-white/20">
+                <Star className="w-3 h-3 text-yellow-400" />
+                <span className="text-xs text-gray-300">2+ Năm Kinh Nghiệm</span>
+              </div>
+            </div>
+            
+            {/* Floating Elements */}
+            <div className="absolute top-4 right-4 w-3 h-3 bg-blue-400 rounded-full animate-pulse"></div>
+            <div className="absolute bottom-6 left-6 w-2 h-2 bg-green-400 rounded-full animate-pulse delay-1000"></div>
+            <div className="absolute top-1/2 -right-2 w-2 h-2 bg-purple-400 rounded-full animate-pulse delay-500"></div>
+            <div className="absolute top-1/3 -left-2 w-2 h-2 bg-yellow-400 rounded-full animate-pulse delay-1500"></div>
+            
+            {/* Hover Effects */}
+            <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-all duration-700 z-20 hidden sm:block">
+              <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/10 to-transparent transform -translate-x-full group-hover:translate-x-full transition-transform duration-1000" />
+              <div className="absolute inset-0 bg-gradient-to-bl from-transparent via-white/5 to-transparent transform translate-y-full group-hover:-translate-y-full transition-transform duration-1000 delay-100" />
+            </div>
           </div>
         </div>
       </div>
@@ -279,36 +311,28 @@ const AboutPage = () => {
               </blockquote>
             </div>
 
-                         {/* Services Section */}
-             <div className="space-y-4" data-aos="fade-up" data-aos-duration="1800">
-               <h3 className="text-xl font-semibold text-white">Dịch vụ gia sư:</h3>
-               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                 <div className="flex items-center gap-3 p-3 rounded-lg bg-white/5 border border-white/10">
-                   <Code className="w-5 h-5 text-blue-400" />
-                   <span className="text-gray-300 text-sm">Python Programming</span>
-                 </div>
-                 <div className="flex items-center gap-3 p-3 rounded-lg bg-white/5 border border-white/10">
-                   <Globe className="w-5 h-5 text-green-400" />
-                   <span className="text-gray-300 text-sm">Web Development</span>
-                 </div>
-                 <div className="flex items-center gap-3 p-3 rounded-lg bg-white/5 border border-white/10">
-                   <BookOpen className="w-5 h-5 text-purple-400" />
-                   <span className="text-gray-300 text-sm">Giáo trình chi tiết</span>
-                 </div>
-                 <div className="flex items-center gap-3 p-3 rounded-lg bg-white/5 border border-white/10">
-                   <UserCheck className="w-5 h-5 text-orange-400" />
-                   <span className="text-gray-300 text-sm">Nhận xét sau buổi học</span>
-                 </div>
-                 <div className="flex items-center gap-3 p-3 rounded-lg bg-white/5 border border-white/10">
-                   <Presentation className="w-5 h-5 text-pink-400" />
-                   <span className="text-gray-300 text-sm">Thuyết trình sản phẩm</span>
-                 </div>
-                 <div className="flex items-center gap-3 p-3 rounded-lg bg-white/5 border border-white/10">
-                   <Users2 className="w-5 h-5 text-cyan-400" />
-                   <span className="text-gray-300 text-sm">Giám khảo đánh giá</span>
-                 </div>
-               </div>
-             </div>
+            {/* Services Section */}
+            <div className="space-y-4" data-aos="fade-up" data-aos-duration="1800">
+              <h3 className="text-xl font-semibold text-white">Dịch vụ gia sư:</h3>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                <div className="flex items-center gap-3 p-3 rounded-lg bg-white/5 border border-white/10">
+                  <Code className="w-5 h-5 text-blue-400" />
+                  <span className="text-gray-300 text-sm">Python Programming</span>
+                </div>
+                <div className="flex items-center gap-3 p-3 rounded-lg bg-white/5 border border-white/10">
+                  <Globe className="w-5 h-5 text-green-400" />
+                  <span className="text-gray-300 text-sm">Web Development</span>
+                </div>
+                <div className="flex items-center gap-3 p-3 rounded-lg bg-white/5 border border-white/10">
+                  <BookOpen className="w-5 h-5 text-purple-400" />
+                  <span className="text-gray-300 text-sm">Giáo trình chi tiết</span>
+                </div>
+                <div className="flex items-center gap-3 p-3 rounded-lg bg-white/5 border border-white/10">
+                  <UserCheck className="w-5 h-5 text-orange-400" />
+                  <span className="text-gray-300 text-sm">Nhận xét sau buổi học</span>
+                </div>
+              </div>
+            </div>
 
             <div className="flex flex-col lg:flex-row items-center lg:items-start gap-4 lg:gap-4 lg:px-0 w-full">
               <a href="https://drive.google.com/drive/folders/1BOm51Grsabb3zj6Xk27K-iRwI1zITcpo" className="w-full lg:w-auto">
